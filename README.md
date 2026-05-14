@@ -1,51 +1,194 @@
 # CareerForge AI
 
-AI Interview Readiness Analyzer — Next.js 14 (App Router), Clerk, Groq, optional Supabase.
+AI-powered interview readiness platform designed to help students and professionals evaluate technical preparedness, resume quality, portfolio strength, and overall recruiter readiness through intelligent assessments and AI-generated insights.
 
-## Prerequisites
+---
 
-- Node.js 18+
-- [Clerk](https://dashboard.clerk.com) and [Groq](https://console.groq.com) accounts (optional: [Supabase](https://supabase.com))
+## Live Deployment
 
-## Environment and run
+https://career-forge-ai-alpha.vercel.app
 
-From this directory (`careerforge-ai/`):
+---
+
+## Overview
+
+CareerForge AI combines AI-driven analysis with a modern user experience to deliver personalized interview preparation insights, recruiter-style evaluations, and actionable improvement recommendations.
+
+The platform provides:
+- Resume intelligence
+- Technical readiness analysis
+- AI-generated interview feedback
+- Portfolio evaluation
+- Interactive analytics dashboards
+- Mock interview experiences
+
+---
+
+## Features
+
+### AI Readiness Scoring
+Comprehensive readiness scoring system based on:
+- Technical Skills
+- Resume Quality
+- Communication Confidence
+- Project Experience
+- Portfolio Strength
+- GitHub Activity
+
+---
+
+### Resume Intelligence
+- Resume PDF parsing
+- ATS compatibility analysis
+- Skill extraction
+- Missing keyword detection
+- Resume optimization suggestions
+
+---
+
+### AI Feedback Engine
+Generate personalized:
+- Strength analysis
+- Weakness detection
+- Improvement roadmap
+- Recruiter-style feedback
+- Learning recommendations
+
+---
+
+### Portfolio & GitHub Analysis
+Analyze:
+- GitHub repositories
+- Portfolio websites
+- Technical diversity
+- Contribution consistency
+- Project quality
+
+---
+
+### AI Mock Interviews
+Generate:
+- Technical interview questions
+- HR interview questions
+- Resume-based interview rounds
+- AI-generated evaluation feedback
+
+---
+
+### Interactive Dashboard
+Includes:
+- Readiness metrics
+- Radar charts
+- Performance insights
+- Progress tracking
+- Skill analytics
+
+---
+
+## Tech Stack
+
+### Frontend
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Shadcn UI
+
+### Backend
+- Next.js API Routes
+
+### AI Integration
+- Groq API
+
+### Visualization
+- Recharts
+
+### Deployment
+- Vercel
+
+---
+
+## Architecture
 
 ```bash
-cp env.local.template .env.local
+careerforge-ai/
+│
+├── app/
+├── components/
+├── hooks/
+├── lib/
+├── services/
+├── types/
+├── utils/
+├── public/
+├── middleware.ts
+├── tailwind.config.ts
+├── next.config.js
+└── package.json
 ```
 
-Edit **`.env.local`**:
+---
 
-1. **Clerk** — Dashboard → your application → **API Keys**. Paste **`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`** and **`CLERK_SECRET_KEY`** from the **same** instance. For **`http://localhost:3000`** use the **Development** keys (`pk_test_` + `sk_test_`). **`pk_live_` / `sk_live_` do not work on localhost** and often produce **`host_invalid`**. Do not hand-edit `pk_test` into `pk_live` while keeping the same key body.
-2. **`GROQ_API_KEY`** — Groq Console → **API Keys** (required for AI: assessment, resume, portfolio, mock interview, insights).
+## User Experience
 
-Supabase variables are optional (browser-side sync of readiness reports when the table exists).
+The application is designed with a modern SaaS-inspired interface featuring:
+- Glassmorphism UI
+- Responsive layouts
+- Smooth animations
+- Interactive dashboards
+- Dark / light themes
+- Motion-based transitions
 
-Then:
+---
 
-```bash
-npm install
-npm run dev
-```
+## Deployment
 
-Open [http://localhost:3000](http://localhost:3000), sign in or sign up, then use **Assessment**, **Dashboard**, and the other app routes.
+Production deployment is supported on:
+- Vercel
+- Netlify
+- Railway
 
-## Production build (recheck)
+---
 
-```bash
-npm run build
-npm start
-```
+## Screenshots
 
-## Env files
+Add application screenshots here:
+- Landing Page
+- Dashboard
+- Resume Analysis
+- Portfolio Insights
+- Mock Interview
+- Mobile Experience
 
-| File | Role |
-|------|------|
-| `env.local.template` | Starter file: copy to `.env.local`, then **set Clerk + Groq** (committed) |
-| `.env.example` | Variable checklist with empty values (committed) |
-| `.env.local` | Your real secrets (gitignored — not in git) |
+---
 
-## Vercel
+## Roadmap
 
-Create a project from this repo (or connect the repo), set the same variables under **Settings → Environment Variables**, then deploy.
+Planned enhancements:
+- Voice-based interview analysis
+- AI communication scoring
+- Live coding interviews
+- Company-fit recommendations
+- Personalized study planner
+- AI career recommendations
+
+---
+
+## Security
+
+- Secure API routes
+- Protected server-side AI requests
+- Environment-based configuration
+- Middleware-based route protection
+
+---
+
+## License
+
+MIT License
+
+---
+
+## Author
+
+Developed by Sreeshaa Shanmugavel.
