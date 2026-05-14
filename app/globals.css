@@ -2,25 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 220 20% 97%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 83% 58%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --radius: 14px;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+    --muted: 217 33% 12%;
+    --muted-foreground: 215 20% 72%;
+    --border: 217 33% 14%;
+    --input: 217 33% 14%;
+    --ring: 262 83% 65%;
+    --primary: 262 83% 65%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 33% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 199 89% 55%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 210 40% 98%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
+  .glass {
+    @apply bg-card/55 backdrop-blur-xl border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset];
+  }
+
+  .dark .glass {
+    @apply bg-card/40 border-white/10;
+  }
+
+  .gradient-border {
+    position: relative;
+    border-radius: calc(var(--radius) + 2px);
+    background: linear-gradient(
+      135deg,
+      rgba(124, 58, 237, 0.55),
+      rgba(14, 165, 233, 0.45),
+      rgba(16, 185, 129, 0.45)
+    );
+    padding: 1px;
+  }
+
+  .gradient-border > * {
+    border-radius: var(--radius);
+  }
+
   .text-balance {
     text-wrap: balance;
   }
